@@ -16,17 +16,17 @@ By [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
 {
-    'baosize-bot/symbol-overlay.nvim'
+    "baosize-bot/symbols-overlay.nvim",
     opts = {},
     keys = {
-        {"<leader>ho", require("symbol-overlay").add, desc = "Overlay: add current word" },
-        {"<leader>hd", require("symbol-overlay").remove, desc = "Overlay: delete current" },
-        {"<leader>hn", require("symbol-overlay").next, desc = "Overlay: next" },
-        {"<leader>hN", require("symbol-overlay").prev, desc = "Overlay: prev" },
-        {"<leader>hr", require("symbol-overlay").rename, desc = "Overlay: rename (buffer only)" },
-        {"<leader>ht", require("symbol-overlay").toggle, desc = "Overlay: toggle current word" },
-        {"<leader>h]", require("symbol-overlay").switch_forward, desc = "Overlay: switch to next nearby" },
-        {"<leader>h[", require("symbol-overlay").switch_backward, desc = "Overlay: switch to prev nearby" },
+        { "<leader>ho", function() require("symbols-overlay").add() end, desc = "Overlay: add current word" },
+        { "<leader>hd", function() require("symbols-overlay").remove() end, desc = "Overlay: delete current" },
+        { "<leader>hn", function() require("symbols-overlay").next() end, desc = "Overlay: next" },
+        { "<leader>hN", function() require("symbols-overlay").prev() end, desc = "Overlay: prev" },
+        { "<leader>hr", function() require("symbols-overlay").rename() end, desc = "Overlay: rename (buffer only)" },
+        { "<leader>ht", function() require("symbols-overlay").toggle() end, desc = "Overlay: toggle current word" },
+        { "<leader>h]", function() require("symbols-overlay").switch_forward() end, desc = "Overlay: switch to next nearby" },
+        { "<leader>h[", function() require("symbols-overlay").switch_backward() end, desc = "Overlay: switch to prev nearby" },
     },
 }
 
