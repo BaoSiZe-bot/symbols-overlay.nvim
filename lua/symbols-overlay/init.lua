@@ -13,22 +13,22 @@ local colors = {
 }
 M.default_config = {
 	colors = { -- 10 preset colors
-		"SymbolsOverlay1",
-		"SymbolsOverlay2",
-		"SymbolsOverlay3",
-		"SymbolsOverlay4",
-		"SymbolsOverlay5",
-		"SymbolsOverlay6",
-		"SymbolsOverlay7",
-		"SymbolsOverlay8",
-		"SymbolsOverlay9",
+		"SymbolOverlay1",
+		"SymbolOverlay2",
+		"SymbolOverlay3",
+		"SymbolOverlay4",
+		"SymbolOverlay5",
+		"SymbolOverlay6",
+		"SymbolOverlay7",
+		"SymbolOverlay8",
+		"SymbolOverlay9",
 	},
 }
 M.config = vim.deepcopy(M.default_config)
 
 function M.colors_setup()
 	for i, color in ipairs(colors) do
-		local hl = "SymbolsOverlay" .. i
+		local hl = "SymbolOverlay" .. i
 		local ok = vim.api.nvim_get_hl(0, { name = hl })
 		if not ok.bg then
 			vim.api.nvim_set_hl(0, hl, color)
@@ -44,7 +44,7 @@ function M.add()
 	end
 
 	local idx = #M.overlays % #M.config.colors + 1
-	local hl = "SymbolsOverlay" .. idx
+	local hl = "SymbolOverlay" .. idx
 
 	-- Match the full word only
 	local pattern = "\\<" .. word .. "\\>"
